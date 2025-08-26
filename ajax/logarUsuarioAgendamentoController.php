@@ -15,4 +15,9 @@ $senha = md5($_POST['senha']);
 
 $dadoUsuario = $objConsultar->logarAgendamento($cpf, $senha);
 
+
+session_start();
+
+$_SESSION['usuariosLogados'] = $dadoUsuario;
+
 echo json_encode(array('retornoCondicao' => $dadoUsuario));
